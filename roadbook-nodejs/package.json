@@ -16,6 +16,8 @@
         "express-session": "^1.17.2",
         "morgan": "^1.10.0",
         "nodemon": "^2.0.15",
-        "redis": "^4.0.1"
+        "redis": "^4.0.1",
+        "url": "^0.11.0",
+        "uuid-apikey": "^1.5.3"
     }
 }

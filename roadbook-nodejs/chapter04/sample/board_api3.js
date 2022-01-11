@@ -1,6 +1,7 @@
 const morgan = require('morgan');
 const url = require('url');
 const uuidAPIkey = require('uuid-apikey');
+const cors = require('cors');
 
 /* express app generate */
 const express = require('express');
@@ -14,15 +15,17 @@ app.set('port', process.env.PORT || 8080);
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 /* 테스트를 위한 API키 */
 const key = {
-    apiKey: '396Q2JT-7JZ487P-JEQ6274-C0TYXMG',
-    uuid: '1a4d714b-3cbe-441e-93ae-611c6035eed2'
+    apiKey: '08KNCE5-VGZM93Q-MHS4BPR-G11ZHZ4',  
+    uuid: '02275638-dc3f-448e-a472-45db8043f8fc'
 };
 
 /* 테스트를 위한 게시글 데이터 */
-let boardList = [{"id":0, "user_id": "jeho", "date": "2021-01-31T18:18:18.038Z"}];
+let boardList = [{"id":3, "user_id": "jeho", "date": "2021-01-31T18:18:18.038Z", "title":"로드북 출판사 입니다.",
+                "content": "백견불여일타 시리즈 많이 사랑해주세요"}];
 let numOfBoard = 0;
 
 /* 라우팅 설정 */
